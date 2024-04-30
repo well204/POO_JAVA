@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "LibraryApplication",
+            "request": "launch",
+            "mainClass": "entities.library.LibraryApplication",
+            "projectName": "teste_d2d53a7e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": [
+                "--module-path",
+                "<C:\\Users\\welli\\Downloads\\openjfx-22.0.1_windows-x64_bin-sdk>/lib",
+                "--add-modules",
+                "javafx.controls,javafx.fxml"
+            ]
+        }
+    ]
+}

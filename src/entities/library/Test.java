@@ -4,7 +4,7 @@ public class Test {
     public static void main(String[] args) {
         // Criando o primeiro livro
         Book book1 = new Book("Dune", new Author("Frank Herbert"), 1234, 2024);
-        book1.addCategory(Category.valueOf("ACTION"));
+        book1.addCategory(Category.valueOf("ACTION".toUpperCase()));
         book1.addCategory(Category.valueOf("HORROR"));
         book1.addCategory(Category.valueOf("FICTION"));
 

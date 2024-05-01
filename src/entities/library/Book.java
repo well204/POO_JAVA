@@ -9,6 +9,7 @@ public class Book {
     private boolean disponible = true;
     private Integer isbn;
     private int publicationDate;
+    private Integer quantity = 0;
     private List<Category> category = new ArrayList<>();
 
     public Book() {
@@ -19,10 +20,15 @@ public class Book {
         this.author = author;
         this.isbn = isbn;
         this.publicationDate = publicationDate;
+        this.quantity++;
     }
 
     public void addCategory(Category category) {
         this.category.add(category);
+    }
+
+    public void increaseQuantity() {
+        this.quantity++;
     }
 
     public String getTitle() {
@@ -37,23 +43,27 @@ public class Book {
         return isbn;
     }
 
+    public Integer getQuantity() {
+        return quantity;
+    }
+
     public int getPublicationDate() {
         return publicationDate;
     }
 
     public boolean isDisponible() {
-        if (disponible) {
-            return this.disponible;
+        if (quantity == 0) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     public void loan() {
-        this.disponible = false;
+        quantity--;
     }
 
     public void giveBack() {
-        this.disponible = true;
+        quantity++;
     }
 
     public List<Category> getCategory() {

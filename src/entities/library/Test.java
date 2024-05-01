@@ -13,6 +13,14 @@ public class Test {
         book2.addCategory(Category.valueOf("FICTION"));
         book2.addCategory(Category.valueOf("ROMANCE"));
 
+        Book book21 = new Book("The Great Gatsby", new Author("F. Scott Fitzgerald"), 5678, 1925);
+        book2.addCategory(Category.valueOf("FICTION"));
+        book2.addCategory(Category.valueOf("ROMANCE"));
+
+        Book book212 = new Book("The Great Gatsby", new Author("F. Scott Fitzgerald"), 5678, 1925);
+        book2.addCategory(Category.valueOf("FICTION"));
+        book2.addCategory(Category.valueOf("ROMANCE"));
+
         // Criando o terceiro livro
         Book book3 = new Book("To Kill a Mockingbird", new Author("Harper Lee"), 91011, 1960);
         book3.addCategory(Category.valueOf("FICTION"));
@@ -35,11 +43,13 @@ public class Test {
         lib.addBook(book3);
         lib.addBook(book4);
         lib.addBook(book5);
+        lib.addBook(book21);
+        lib.addBook(book212);
         lib.showBooks();
-        lib.loan("The Lord of the Rings");
-        lib.loan("The Lord of the Rings");
-        lib.giveBack("The Lord of the Rings");
-        lib.loan("The Lord of the Rings");
+        lib.loan("The Great Gatsby");
+        lib.loan("The Great Gatsby");
+        lib.giveBack("The Great Gatsby");
+        lib.loan("The Great Gatsby");
 
     }
 }

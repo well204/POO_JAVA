@@ -18,6 +18,11 @@ public class Library {
     }
 
     public void addBook(Book book) {
+        for (Book b : books) {
+            if (b.getTitle() == book.getTitle() && b.getIsbn() == book.getIsbn()) {
+                b.increaseQuantity();
+            }
+        }
         books.add(book);
     }
 
@@ -66,10 +71,12 @@ public class Library {
             if (b.getTitle() == title) {
                 if (!b.isDisponible()) {
                     System.err.println("Sorry, but this book is indisponible.");
+                    break;
                 }
                 if (b.isDisponible()) {
                     System.out.println("You get the book: " + b.getTitle());
                     b.loan();
+                    break;
                 }
             }
         }
@@ -78,13 +85,9 @@ public class Library {
     public void giveBack(String title) {
         for (Book b : books) {
             if (b.getTitle() == title) {
-                if (b.isDisponible()) {
-                    System.err.println("This book is already disponible.");
-                }
-                if (!b.isDisponible()) {
-                    System.out.println("You gived back the book: " + b.getTitle());
-                    b.giveBack();
-                }
+                System.out.println("You gived back the book: " + b.getTitle());
+                b.giveBack();
+                break;
             }
         }
     }

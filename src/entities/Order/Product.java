@@ -2,21 +2,30 @@ package entities.Order;
 
 public class Product {
     private String name;
-    private String price;
+    private Double price;
+
+    public Product() {
+    }
+
+    public Product(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
 
     public String getName() {
         return name;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public Product() {
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Product(String name, String price) {
-        this.name = name;
+    public void setPrice(Double price) {
         this.price = price;
     }
+
 }

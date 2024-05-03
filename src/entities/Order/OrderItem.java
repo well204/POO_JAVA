@@ -42,4 +42,10 @@ public class OrderItem {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    @Override
+    public String toString() {
+        return product.getName() + ", $" + product.getPrice() + ", Quantity: " + quantity + ", Subtotal: " + subTotal();
+    }
+
 }

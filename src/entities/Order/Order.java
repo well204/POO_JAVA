@@ -1,20 +1,23 @@
 package entities.Order;
 
-import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Order {
-    private Date moment;
+    private LocalDateTime moment;
     private OrderStatus status;
     private List<OrderItem> items = new ArrayList<>();
     private Client client;
+    private static DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static SimpleDateFormat birthFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public Order() {
-
     }
 
-    public Order(Date moment, OrderStatus status, Client client) {
+    public Order(LocalDateTime moment, OrderStatus status, Client client) {
         this.moment = moment;
         this.status = status;
         this.client = client;
@@ -36,7 +39,7 @@ public class Order {
         return total;
     }
 
-    public Date getMoment() {
+    public LocalDateTime getMoment() {
         return moment;
     }
 
@@ -54,5 +57,21 @@ public class Order {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Order moment: " + fomatter.format(this.moment) + "\n");
+        sb.append("Order status: " + this.status + "\n");
+        sb.append("Client: " + this.client.getClientName() + " "
+                + birthFormat.format(this.client.getClientBirthDate()) + " - "
+                + this.client.getClientEmail() + "\n");
+        sb.append("Order items: " + "\n");
+        for (OrderItem item : items) {
+            sb.append(item.toString() + "\n");
+        }
+        sb.append("Total price: " + this.total());
+        return sb.toString();
     }
 }

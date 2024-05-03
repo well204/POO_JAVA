@@ -72,7 +72,7 @@ public class Order {
         for (OrderItem item : items) {
             sb.append(item.toString() + "\n");
         }
-        sb.append("Total price: " + totalFormat);
+        sb.append("Total price: $" + totalFormat);
         return sb.toString();
     }
 }

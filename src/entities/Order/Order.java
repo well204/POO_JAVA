@@ -61,6 +61,7 @@ public class Order {
 
     @Override
     public String toString() {
+        String totalFormat = String.format("%.2f", total());
         StringBuilder sb = new StringBuilder();
         sb.append("Order moment: " + fomatter.format(this.moment) + "\n");
         sb.append("Order status: " + this.status + "\n");
@@ -71,7 +72,7 @@ public class Order {
         for (OrderItem item : items) {
             sb.append(item.toString() + "\n");
         }
-        sb.append("Total price: " + this.total());
+        sb.append("Total price: " + totalFormat);
         return sb.toString();
     }
 }

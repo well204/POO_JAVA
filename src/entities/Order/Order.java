@@ -11,7 +11,7 @@ public class Order {
     private OrderStatus status;
     private List<OrderItem> items = new ArrayList<>();
     private Client client;
-    private static DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private static SimpleDateFormat birthFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public Order() {

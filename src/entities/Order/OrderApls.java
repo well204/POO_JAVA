@@ -48,7 +48,7 @@ public class OrderApls {
             order.addItem(item);
         }
 
-        System.out.println("\nORDER SUMMARY:");
+        System.out.println();
         System.out.println(order);
         System.out.println();
         scanner.close();

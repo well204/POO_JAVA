@@ -63,6 +63,7 @@ public class Order {
     public String toString() {
         String totalFormat = String.format("%.2f", total());
         StringBuilder sb = new StringBuilder();
+        sb.append("\nORDER SUMMARY:\n");
         sb.append("Order moment: " + fomatter.format(this.moment) + "\n");
         sb.append("Order status: " + this.status + "\n");
         sb.append("Client: " + this.client.getClientName() + " "
